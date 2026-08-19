@@ -1,0 +1,151 @@
+{
+  "sklift_pearson_r": 1.0,
+  "sklift_max_abs_diff": 0.0,
+  "rct_ate_val": 0.07662431978183071,
+  "mean_tau_t": 0.07547441124916077,
+  "mean_tau_x": 0.07546567171812057,
+  "deciles_t": [
+    {
+      "decile": 1,
+      "model": "T",
+      "mean_tau": 0.1714179962873459,
+      "true_lift": 0.127416,
+      "n": 895
+    },
+    {
+      "decile": 2,
+      "model": "T",
+      "mean_tau": 0.1192760020494461,
+      "true_lift": 0.091913,
+      "n": 895
+    },
+    {
+      "decile": 3,
+      "model": "T",
+      "mean_tau": 0.10244400054216385,
+      "true_lift": 0.064107,
+      "n": 895
+    },
+    {
+      "decile": 4,
+      "model": "T",
+      "mean_tau": 0.08725199848413467,
+      "true_lift": 0.071803,
+      "n": 893
+    },
+    {
+      "decile": 5,
+      "model": "T",
+      "mean_tau": 0.07512500137090683,
+      "true_lift": 0.042666,
+      "n": 896
+    },
+    {
+      "decile": 6,
+      "model": "T",
+      "mean_tau": 0.06478700041770935,
+      "true_lift": 0.074342,
+      "n": 895
+    },
+    {
+      "decile": 7,
+      "model": "T",
+      "mean_tau": 0.05514499917626381,
+      "true_lift": 0.068665,
+      "n": 895
+    },
+    {
+      "decile": 8,
+      "model": "T",
+      "mean_tau": 0.04633000120520592,
+      "true_lift": 0.071613,
+      "n": 895
+    },
+    {
+      "decile": 9,
+      "model": "T",
+      "mean_tau": 0.033608999103307724,
+      "true_lift": 0.07493,
+      "n": 895
+    },
+    {
+      "decile": 10,
+      "model": "T",
+      "mean_tau": -0.000615999975707382,
+      "true_lift": 0.080439,
+      "n": 895
+    }
+  ],
+  "deciles_x": [
+    {
+      "decile": 1,
+      "model": "X",
+      "mean_tau": 0.1586730033159256,
+      "true_lift": 0.137442,
+      "n": 895
+    },
+    {
+      "decile": 2,
+      "model": "X",
+      "mean_tau": 0.10891400277614594,
+      "true_lift": 0.109318,
+      "n": 895
+    },
+    {
+      "decile": 3,
+      "model": "X",
+      "mean_tau": 0.09474500268697739,
+      "true_lift": 0.055564,
+      "n": 895
+    },
+    {
+      "decile": 4,
+      "model": "X",
+      "mean_tau": 0.08519800007343292,
+      "true_lift": 0.045592,
+      "n": 895
+    },
+    {
+      "decile": 5,
+      "model": "X",
+      "mean_tau": 0.07676299661397934,
+      "true_lift": 0.065429,
+      "n": 894
+    },
+    {
+      "decile": 6,
+      "model": "X",
+      "mean_tau": 0.06815099716186523,
+      "true_lift": 0.050191,
+      "n": 895
+    },
+    {
+      "decile": 7,
+      "model": "X",
+      "mean_tau": 0.059544000774621964,
+      "true_lift": 0.07916,
+      "n": 893
+    },
+    {
+      "decile": 8,
+      "model": "X",
+      "mean_tau": 0.04995900020003319,
+      "true_lift": 0.073251,
+      "n": 897
+    },
+    {
+      "decile": 9,
+      "model": "X",
+      "mean_tau": 0.03863900154829025,
+      "true_lift": 0.091663,
+      "n": 895
+    },
+    {
+      "decile": 10,
+      "model": "X",
+      "mean_tau": 0.014093000441789627,
+      "true_lift": 0.06114,
+      "n": 895
+    }
+  ]
+}
