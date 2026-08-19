@@ -45,3 +45,24 @@ def test_calibration_is_monotone_when_scores_are_true_effects():
     # predicted and observed should correlate strongly across deciles
     r = cal["predicted_uplift"].corr(cal["observed_lift"])
     assert r > 0.7
+
+
+def test_delta_ci_identical_scores_is_zero():
+    from incremental.evaluation import bootstrap_delta_ci
+    y, t, tau = synthetic()
+    res = bootstrap_delta_ci(y, t, tau, tau.copy(),
+                             lambda a, b, c: uplift_at_k(a, b, c, 0.2),
+                             n_boot=50)
+    assert res["point"] == 0.0
+    assert not res["separable"]
+
+
+def test_delta_ci_separates_signal_from_noise():
+    from incremental.evaluation import bootstrap_delta_ci
+    y, t, tau = synthetic()
+    rng = np.random.default_rng(1)
+    noise = rng.uniform(size=len(y))
+    res = bootstrap_delta_ci(y, t, tau, noise,
+                             lambda a, b, c: uplift_at_k(a, b, c, 0.2),
+                             n_boot=50)
+    assert res["separable"] and res["lo"] > 0

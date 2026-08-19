@@ -60,8 +60,13 @@ def calibration_by_decile(
     magnitudes, not just a ranking.
     """
     df = pd.DataFrame({"y": y, "t": t, "tau": tau_hat})
+    # break exact score ties (common with shallow trees on few features) so
+    # bins stay equal-population; jitter is ~1e-10 of the score scale
+    rng = np.random.default_rng(0)
+    scale = max(float(np.std(tau_hat)), 1e-12)
+    jittered = df["tau"] + rng.uniform(0, scale * 1e-9, size=len(df))
     df["decile"] = (
-        n_deciles - pd.qcut(df["tau"], n_deciles, labels=False, duplicates="drop")
+        n_deciles - pd.qcut(jittered, n_deciles, labels=False, duplicates="drop")
     ).astype(int)
     rows = []
     for d, g in df.groupby("decile"):
@@ -133,3 +138,44 @@ def quadrant_analysis(
     out = pd.DataFrame(rows)
     out["segment"] = pd.Categorical(out["segment"], order, ordered=True)
     return out.sort_values("segment").reset_index(drop=True)
+
+
+def bootstrap_delta_ci(
+    y: np.ndarray,
+    t: np.ndarray,
+    score_a: np.ndarray,
+    score_b: np.ndarray,
+    metric_fn: Callable[[np.ndarray, np.ndarray, np.ndarray], float],
+    n_boot: int = N_BOOT,
+    seed: int = 7,
+) -> dict:
+    """Paired bootstrap CI for metric(a) − metric(b).
+
+    The SAME stratified resample is applied to both rankings, so shared
+    sampling noise cancels and the CI reflects the difference itself —
+    the statistically honest way to ask "is ranking A better than B?"
+    (Overlapping individual CIs cannot answer that.)
+    """
+    y, t = np.asarray(y), np.asarray(t)
+    score_a, score_b = np.asarray(score_a), np.asarray(score_b)
+    rng = np.random.default_rng(seed)
+    idx_t, idx_c = np.where(t == 1)[0], np.where(t == 0)[0]
+    deltas = np.empty(n_boot)
+    for b in range(n_boot):
+        bi = np.concatenate([
+            rng.choice(idx_t, len(idx_t), replace=True),
+            rng.choice(idx_c, len(idx_c), replace=True),
+        ])
+        deltas[b] = metric_fn(y[bi], t[bi], score_a[bi]) - metric_fn(
+            y[bi], t[bi], score_b[bi]
+        )
+    lo, hi = np.percentile(deltas, CI)
+    point = float(
+        metric_fn(y, t, score_a) - metric_fn(y, t, score_b)
+    )
+    return {
+        "point": point,
+        "lo": float(lo),
+        "hi": float(hi),
+        "separable": bool(lo > 0 or hi < 0),
+    }
