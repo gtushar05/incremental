@@ -1,0 +1,105 @@
+{
+  "auc_treated_val": 0.5817282459937168,
+  "headline": {
+    "top_k_deciles": 2,
+    "response_capture": 222.8448895097456,
+    "oracle_capture": 222.8448895097456,
+    "total_incremental": 682.4521970351464,
+    "response_share": 0.32653552948891607,
+    "oracle_share": 0.32653552948891607,
+    "efficiency_vs_oracle": 1.0,
+    "rank_corr_score_vs_uplift": -0.22424242424242422
+  },
+  "deciles": [
+    {
+      "decile": 1,
+      "n": 895,
+      "mean_score": 0.39562100172042847,
+      "treated_rate": 0.284783,
+      "control_rate": 0.14023,
+      "true_uplift": 0.144553,
+      "incremental": 129.374688
+    },
+    {
+      "decile": 2,
+      "n": 895,
+      "mean_score": 0.2787880003452301,
+      "treated_rate": 0.233766,
+      "control_rate": 0.12933,
+      "true_uplift": 0.104436,
+      "incremental": 93.470202
+    },
+    {
+      "decile": 3,
+      "n": 888,
+      "mean_score": 0.23340199887752533,
+      "treated_rate": 0.182448,
+      "control_rate": 0.136264,
+      "true_uplift": 0.046184,
+      "incremental": 41.011659
+    },
+    {
+      "decile": 4,
+      "n": 902,
+      "mean_score": 0.2036769986152649,
+      "treated_rate": 0.173034,
+      "control_rate": 0.109409,
+      "true_uplift": 0.063625,
+      "incremental": 57.389315
+    },
+    {
+      "decile": 5,
+      "n": 893,
+      "mean_score": 0.1807350069284439,
+      "treated_rate": 0.197753,
+      "control_rate": 0.140625,
+      "true_uplift": 0.057128,
+      "incremental": 51.015133
+    },
+    {
+      "decile": 6,
+      "n": 896,
+      "mean_score": 0.15836100280284882,
+      "treated_rate": 0.159091,
+      "control_rate": 0.118421,
+      "true_uplift": 0.04067,
+      "incremental": 36.440191
+    },
+    {
+      "decile": 7,
+      "n": 895,
+      "mean_score": 0.13720999658107758,
+      "treated_rate": 0.185615,
+      "control_rate": 0.090517,
+      "true_uplift": 0.095098,
+      "incremental": 85.112359
+    },
+    {
+      "decile": 8,
+      "n": 895,
+      "mean_score": 0.11394499987363815,
+      "treated_rate": 0.146552,
+      "control_rate": 0.095128,
+      "true_uplift": 0.051424,
+      "incremental": 46.024582
+    },
+    {
+      "decile": 9,
+      "n": 895,
+      "mean_score": 0.08804000169038773,
+      "treated_rate": 0.135632,
+      "control_rate": 0.058696,
+      "true_uplift": 0.076937,
+      "incremental": 68.858196
+    },
+    {
+      "decile": 10,
+      "n": 895,
+      "mean_score": 0.05366099998354912,
+      "treated_rate": 0.126087,
+      "control_rate": 0.043678,
+      "true_uplift": 0.082409,
+      "incremental": 73.755872
+    }
+  ]
+}

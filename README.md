@@ -16,7 +16,7 @@ incremental profit.
 | Day | Milestone | Status |
 |---|---|---|
 | 1 | Randomization validated (SRM p=0.90, 0/36 covariates imbalanced) · golden holdout locked & hashed | ✅ |
-| 2 | Propensity baseline + budget-misallocation exhibit | ⬜ |
+| 2 | Propensity baseline (AUC 0.58 on the wrong question) + misallocation exhibit: response targeting forfeits 14-17% of capturable lift at 30-50% budgets | ✅ |
 | 3–4 | T/X-learners from scratch, verified vs causalml | ⬜ |
 | 5 | Hand-rolled Qini/AUUC + bootstrap CIs | ⬜ |
 | 6–7 | Criteo 13.9M: ETL, models, signal-viability gate | ⬜ |
