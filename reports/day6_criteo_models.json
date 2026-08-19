@@ -1,0 +1,39 @@
+{
+  "val_comparison": [
+    {
+      "ranking": "random",
+      "qini": 0.000121,
+      "uplift@10%": 0.009773,
+      "uplift@20%": 0.009236,
+      "uplift@30%": 0.010343
+    },
+    {
+      "ranking": "propensity",
+      "qini": 0.002949,
+      "uplift@10%": 0.047276,
+      "uplift@20%": 0.037451,
+      "uplift@30%": 0.029436
+    },
+    {
+      "ranking": "T-learner",
+      "qini": 0.002766,
+      "uplift@10%": 0.055891,
+      "uplift@20%": 0.037372,
+      "uplift@30%": 0.028359
+    },
+    {
+      "ranking": "X-learner",
+      "qini": 0.002889,
+      "uplift@10%": 0.059528,
+      "uplift@20%": 0.036138,
+      "uplift@30%": 0.027401
+    }
+  ],
+  "mean_tau_t": 0.007495005149394274,
+  "mean_tau_x": 0.0074522485956549644,
+  "timings_s": {
+    "propensity": 7.5,
+    "T-learner": 8.2,
+    "X-learner": 16.9
+  }
+}

@@ -19,7 +19,7 @@ incremental profit.
 | 2 | Propensity baseline (AUC 0.58 on the wrong question) + misallocation exhibit: response targeting forfeits 14-17% of capturable lift at 30-50% budgets | ✅ |
 | 3–4 | T/X-learners from scratch, verified (r=1.000 vs sklift + synthetic ground-truth suite); Qini-based CV tuning; seed stability 0.987 | ✅ |
 | 5 | Evaluation suite ✅ — ladder w/ 200-boot CIs (all models beat random; T≈X≈propensity within CIs on Hillstrom), calibration corr 0.66 (top decile: pred 14.2pp vs obs 15.2pp), quadrant analysis | ✅ |
-| 6–7 | Criteo 13.9M: ETL, models, signal-viability gate | ⬜ |
+| 6–7 | Criteo ✅: 13.9M ETL validated (85.00% exact, 0/12 SMD flags), holdout fingerprinted pre-model, T/X/propensity trained (8-17s each); Day 7: conversion label + CIs + gate | 🔶 |
 | 8 | Policy layer: incremental-profit curves | ⬜ |
 | 9 | **Golden-holdout evaluation — headline numbers** | ⬜ |
 | 10–11 | Streamlit decision cockpit (HF Spaces) | ⬜ |
