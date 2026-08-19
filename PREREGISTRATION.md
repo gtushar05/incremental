@@ -45,3 +45,21 @@ assert frame_hash(holdout) == "4b1e135a1a59b382d1bc566818c93acceaec1a61411e96b93
 - Covariate balance: 0 of 36 arm×covariate pairs exceed |SMD| ≥ 0.10 (max 0.016)
 - RCT ground truth (visit rate): control 10.62%, Mens E-Mail 18.28% (+7.66pp),
   Womens E-Mail 15.14% (+4.52pp)
+
+---
+
+## Amendment 1 — Criteo golden holdout (Day 6, before any Criteo model run)
+
+**Date:** 2026-08-24. Committed BEFORE the first model is trained on Criteo data.
+
+- Split rule: deterministic `row_number % 10 < 3` → holdout = 4,193,879 rows (30%);
+  train partition = 9,785,713 rows.
+- Holdout fingerprint (SHA256 of per-column aggregate signature):
+  `eabff873fb5d5467630164e9cac7ddfdd8529d91178d6a0a9fa86817e7b2296b`
+- Training sample: 1,999,943 rows, stratified by treatment × visit, drawn by
+  `hash(rid)` ranking within strata — the documented sampling protocol.
+- Randomization validation at full scale: treated share 0.8500 (design 0.85);
+  0/12 features with |SMD| ≥ 0.10 (worst f3 = −0.049).
+- Ground truth ATEs: visit +1.034pp, conversion +0.115pp.
+- The Day-7 label gate (rule #2 above) will be evaluated on internal validation
+  slices only; the holdout is evaluated once on Day 9.
