@@ -17,7 +17,7 @@ incremental profit.
 |---|---|---|
 | 1 | Randomization validated (SRM p=0.90, 0/36 covariates imbalanced) · golden holdout locked & hashed | ✅ |
 | 2 | Propensity baseline (AUC 0.58 on the wrong question) + misallocation exhibit: response targeting forfeits 14-17% of capturable lift at 30-50% budgets | ✅ |
-| 3–4 | T/X-learners from scratch ✅ (bit-identical to sklift TwoModels, r=1.000000; 4-test synthetic ground-truth suite; causalml unavailable on py3.14) — Day 4: tuning + T-vs-X comparison | 🔶 |
+| 3–4 | T/X-learners from scratch, verified (r=1.000 vs sklift + synthetic ground-truth suite); Qini-based CV tuning; seed stability 0.987 | ✅ |
 | 5 | Hand-rolled Qini/AUUC + bootstrap CIs | ⬜ |
 | 6–7 | Criteo 13.9M: ETL, models, signal-viability gate | ⬜ |
 | 8 | Policy layer: incremental-profit curves | ⬜ |

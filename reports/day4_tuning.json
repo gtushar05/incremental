@@ -1,0 +1,190 @@
+{
+  "grid_results": {
+    "T": [
+      {
+        "max_depth": 2,
+        "min_child_weight": 25,
+        "n_estimators": 150,
+        "oof_qini": 0.0011512220360453595
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 25,
+        "n_estimators": 300,
+        "oof_qini": 0.001350410937984226
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 100,
+        "n_estimators": 150,
+        "oof_qini": 0.00043116829364279937
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 100,
+        "n_estimators": 300,
+        "oof_qini": 0.0005103941445206973
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 300,
+        "n_estimators": 150,
+        "oof_qini": 0.0007371414763980457
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 300,
+        "n_estimators": 300,
+        "oof_qini": 0.0011431611462701559
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 25,
+        "n_estimators": 150,
+        "oof_qini": 0.0007977437174284696
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 25,
+        "n_estimators": 300,
+        "oof_qini": 0.0009286522984338209
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 100,
+        "n_estimators": 150,
+        "oof_qini": 0.0006974567619610817
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 100,
+        "n_estimators": 300,
+        "oof_qini": 0.0005930691418049337
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 300,
+        "n_estimators": 150,
+        "oof_qini": 0.0007371414763980457
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 300,
+        "n_estimators": 300,
+        "oof_qini": 0.0011431611462701559
+      }
+    ],
+    "X": [
+      {
+        "max_depth": 2,
+        "min_child_weight": 25,
+        "n_estimators": 150,
+        "oof_qini": 0.0007342735162794633
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 25,
+        "n_estimators": 300,
+        "oof_qini": 0.001312055998349674
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 100,
+        "n_estimators": 150,
+        "oof_qini": 0.0007115134342355023
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 100,
+        "n_estimators": 300,
+        "oof_qini": 0.0011672834374466552
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 300,
+        "n_estimators": 150,
+        "oof_qini": 0.0007453788205778811
+      },
+      {
+        "max_depth": 2,
+        "min_child_weight": 300,
+        "n_estimators": 300,
+        "oof_qini": 0.001147799831692508
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 25,
+        "n_estimators": 150,
+        "oof_qini": 0.0007884749885278859
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 25,
+        "n_estimators": 300,
+        "oof_qini": 0.001168622310230828
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 100,
+        "n_estimators": 150,
+        "oof_qini": 0.0009766719546514013
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 100,
+        "n_estimators": 300,
+        "oof_qini": 0.0009406205103047498
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 300,
+        "n_estimators": 150,
+        "oof_qini": 0.0010539922333911583
+      },
+      {
+        "max_depth": 3,
+        "min_child_weight": 300,
+        "n_estimators": 300,
+        "oof_qini": 0.0012613187699169037
+      }
+    ]
+  },
+  "best": {
+    "T": {
+      "max_depth": 2,
+      "min_child_weight": 25,
+      "n_estimators": 300,
+      "oof_qini": 0.001350410937984226
+    },
+    "X": {
+      "max_depth": 2,
+      "min_child_weight": 25,
+      "n_estimators": 300,
+      "oof_qini": 0.001312055998349674
+    }
+  },
+  "val_comparison": [
+    {
+      "ranking": "propensity",
+      "qini": 0.002116,
+      "uplift@10%": 0.145173,
+      "uplift@20%": 0.124271,
+      "uplift@30%": 0.097667
+    },
+    {
+      "ranking": "T-learner",
+      "qini": 0.001833,
+      "uplift@10%": 0.137712,
+      "uplift@20%": 0.123609,
+      "uplift@30%": 0.105312
+    },
+    {
+      "ranking": "X-learner",
+      "qini": 0.001985,
+      "uplift@10%": 0.152288,
+      "uplift@20%": 0.114945,
+      "uplift@30%": 0.098701
+    }
+  ],
+  "x_seed_stability_spearman": 0.9867152813296441
+}

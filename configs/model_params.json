@@ -1,0 +1,14 @@
+{
+  "T": {
+    "max_depth": 2,
+    "min_child_weight": 25,
+    "n_estimators": 300,
+    "oof_qini": 0.001350410937984226
+  },
+  "X": {
+    "max_depth": 2,
+    "min_child_weight": 25,
+    "n_estimators": 300,
+    "oof_qini": 0.001312055998349674
+  }
+}
