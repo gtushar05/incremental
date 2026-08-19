@@ -1,0 +1,167 @@
+{
+  "ladder": [
+    {
+      "ranking": "random",
+      "qini": 0.000867,
+      "qini_lo": -0.001157,
+      "qini_hi": 0.002912,
+      "uplift@20": 0.073075,
+      "u20_lo": 0.043622,
+      "u20_hi": 0.103441,
+      "uplift@30": 0.078614,
+      "u30_lo": 0.055526,
+      "u30_hi": 0.102034
+    },
+    {
+      "ranking": "propensity (response model)",
+      "qini": 0.002116,
+      "qini_lo": 0.000454,
+      "qini_hi": 0.004406,
+      "uplift@20": 0.124271,
+      "u20_lo": 0.086551,
+      "u20_hi": 0.157773,
+      "uplift@30": 0.097667,
+      "u30_lo": 0.074028,
+      "u30_hi": 0.127582
+    },
+    {
+      "ranking": "T-learner (ours)",
+      "qini": 0.001833,
+      "qini_lo": -0.000348,
+      "qini_hi": 0.004341,
+      "uplift@20": 0.123609,
+      "u20_lo": 0.089907,
+      "u20_hi": 0.157285,
+      "uplift@30": 0.105312,
+      "u30_lo": 0.078602,
+      "u30_hi": 0.132791
+    },
+    {
+      "ranking": "X-learner (ours)",
+      "qini": 0.001985,
+      "qini_lo": -0.000236,
+      "qini_hi": 0.004444,
+      "uplift@20": 0.114945,
+      "u20_lo": 0.077298,
+      "u20_hi": 0.148278,
+      "uplift@30": 0.098701,
+      "u30_lo": 0.069558,
+      "u30_hi": 0.126058
+    }
+  ],
+  "calibration": [
+    {
+      "decile": 1,
+      "n": 895,
+      "predicted_uplift": 0.14189399778842926,
+      "observed_lift": 0.151586,
+      "observed_se": 0.028092
+    },
+    {
+      "decile": 2,
+      "n": 895,
+      "predicted_uplift": 0.09998799860477448,
+      "observed_lift": 0.07966,
+      "observed_se": 0.022552
+    },
+    {
+      "decile": 3,
+      "n": 895,
+      "predicted_uplift": 0.08889999985694885,
+      "observed_lift": 0.065743,
+      "observed_se": 0.021282
+    },
+    {
+      "decile": 4,
+      "n": 895,
+      "predicted_uplift": 0.08254999667406082,
+      "observed_lift": 0.077078,
+      "observed_se": 0.022783
+    },
+    {
+      "decile": 5,
+      "n": 893,
+      "predicted_uplift": 0.0766419991850853,
+      "observed_lift": 0.041045,
+      "observed_se": 0.023216
+    },
+    {
+      "decile": 6,
+      "n": 895,
+      "predicted_uplift": 0.07023900002241135,
+      "observed_lift": 0.082453,
+      "observed_se": 0.021713
+    },
+    {
+      "decile": 7,
+      "n": 896,
+      "predicted_uplift": 0.06261599808931351,
+      "observed_lift": 0.062161,
+      "observed_se": 0.022336
+    },
+    {
+      "decile": 8,
+      "n": 895,
+      "predicted_uplift": 0.05425399914383888,
+      "observed_lift": 0.072683,
+      "observed_se": 0.022808
+    },
+    {
+      "decile": 9,
+      "n": 895,
+      "predicted_uplift": 0.046769000589847565,
+      "observed_lift": 0.044786,
+      "observed_se": 0.022532
+    },
+    {
+      "decile": 10,
+      "n": 895,
+      "predicted_uplift": 0.03145400062203407,
+      "observed_lift": 0.086203,
+      "observed_se": 0.024201
+    }
+  ],
+  "calibration_corr": 0.6579837365844815,
+  "quadrants": [
+    {
+      "segment": "persuadable",
+      "n": 2239,
+      "share": 0.250196,
+      "mean_predicted_tau": 0.11485899984836578,
+      "observed_lift": 0.103952,
+      "control_rate": 0.119349
+    },
+    {
+      "segment": "sure thing",
+      "n": 3082,
+      "share": 0.344396,
+      "mean_predicted_tau": 0.05826999992132187,
+      "observed_lift": 0.079472,
+      "control_rate": 0.132911
+    },
+    {
+      "segment": "lost cause",
+      "n": 3599,
+      "share": 0.402168,
+      "mean_predicted_tau": 0.06652600318193436,
+      "observed_lift": 0.05821,
+      "control_rate": 0.073844
+    },
+    {
+      "segment": "do-not-disturb",
+      "n": 29,
+      "share": 0.003241,
+      "mean_predicted_tau": -0.009519999846816063,
+      "observed_lift": 0.190476,
+      "control_rate": 0.142857
+    }
+  ],
+  "protocol": {
+    "n_boot": 200,
+    "ci": [
+      2.5,
+      97.5
+    ],
+    "split": "internal val"
+  }
+}
