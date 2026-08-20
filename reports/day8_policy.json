@@ -1,0 +1,1330 @@
+{
+  "visit": {
+    "economics": {
+      "margin": 25.0,
+      "cost": 0.4
+    },
+    "treat_all": {
+      "n_selected": 599977,
+      "uplift_in_group": 0.010282460881194715,
+      "incremental_outcomes": 6169.240032116561,
+      "profit": -85759.79919708599
+    },
+    "curves": {
+      "X-learner": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.142473,
+          "incremental_outcomes": 1709.671776,
+          "profit": 37941.794389,
+          "profit_per_contact": 3.161816
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.102988,
+          "incremental_outcomes": 2471.599862,
+          "profit": 52190.396549,
+          "profit_per_contact": 2.17469
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.083393,
+          "incremental_outcomes": 3002.080311,
+          "profit": 60652.407778,
+          "profit_per_contact": 1.684836
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.071954,
+          "incremental_outcomes": 3453.641879,
+          "profit": 67141.846982,
+          "profit_per_contact": 1.398847
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.059523,
+          "incremental_outcomes": 3571.242383,
+          "profit": 65281.859581,
+          "profit_per_contact": 1.088067
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.052835,
+          "incremental_outcomes": 3803.939102,
+          "profit": 66299.677551,
+          "profit_per_contact": 0.920867
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.045755,
+          "incremental_outcomes": 3843.322133,
+          "profit": 62484.253319,
+          "profit_per_contact": 0.743887
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.041323,
+          "incremental_outcomes": 3966.870391,
+          "profit": 60773.359779,
+          "profit_per_contact": 0.633082
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.038512,
+          "incremental_outcomes": 4159.147841,
+          "profit": 60780.296024,
+          "profit_per_contact": 0.562801
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.036042,
+          "incremental_outcomes": 4324.808304,
+          "profit": 60122.20759,
+          "profit_per_contact": 0.501039
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.034479,
+          "incremental_outcomes": 4551.028659,
+          "profit": 60977.716469,
+          "profit_per_contact": 0.46197
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.031681,
+          "incremental_outcomes": 4561.938561,
+          "profit": 56450.864021,
+          "profit_per_contact": 0.392036
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.030193,
+          "incremental_outcomes": 4709.989704,
+          "profit": 55352.142592,
+          "profit_per_contact": 0.354835
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.028736,
+          "incremental_outcomes": 4827.438711,
+          "profit": 53488.367768,
+          "profit_per_contact": 0.318395
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.027435,
+          "incremental_outcomes": 4938.100138,
+          "profit": 51455.303451,
+          "profit_per_contact": 0.285874
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.026049,
+          "incremental_outcomes": 5001.210904,
+          "profit": 48233.072603,
+          "profit_per_contact": 0.251223
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.025131,
+          "incremental_outcomes": 5126.490629,
+          "profit": 46565.465735,
+          "profit_per_contact": 0.228271
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.023957,
+          "incremental_outcomes": 5174.52139,
+          "profit": 42966.234746,
+          "profit_per_contact": 0.198925
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.022882,
+          "incremental_outcomes": 5216.908422,
+          "profit": 39226.310544,
+          "profit_per_contact": 0.172052
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.022018,
+          "incremental_outcomes": 5284.152209,
+          "profit": 36107.405229,
+          "profit_per_contact": 0.150453
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.021416,
+          "incremental_outcomes": 5396.582268,
+          "profit": 34118.556692,
+          "profit_per_contact": 0.135396
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.020662,
+          "incremental_outcomes": 5454.602974,
+          "profit": 30769.07436,
+          "profit_per_contact": 0.116554
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.020021,
+          "incremental_outcomes": 5525.521321,
+          "profit": 27742.433037,
+          "profit_per_contact": 0.10052
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.019435,
+          "incremental_outcomes": 5597.141032,
+          "profit": 24732.925802,
+          "profit_per_contact": 0.085881
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.01873,
+          "incremental_outcomes": 5618.883142,
+          "profit": 20476.878559,
+          "profit_per_contact": 0.068259
+        }
+      ],
+      "propensity": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.055325,
+          "incremental_outcomes": 663.90395,
+          "profit": 11797.598752,
+          "profit_per_contact": 0.983133
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.050226,
+          "incremental_outcomes": 1205.364122,
+          "profit": 20534.503038,
+          "profit_per_contact": 0.85564
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.048372,
+          "incremental_outcomes": 1741.332739,
+          "profit": 29133.718486,
+          "profit_per_contact": 0.809292
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.050804,
+          "incremental_outcomes": 2438.499328,
+          "profit": 41763.283195,
+          "profit_per_contact": 0.870105
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.047269,
+          "incremental_outcomes": 2836.034629,
+          "profit": 46901.66572,
+          "profit_per_contact": 0.78172
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.044268,
+          "incremental_outcomes": 3187.14332,
+          "profit": 50879.782999,
+          "profit_per_contact": 0.706693
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.043951,
+          "incremental_outcomes": 3691.734297,
+          "profit": 58694.557432,
+          "profit_per_contact": 0.69877
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.040927,
+          "incremental_outcomes": 3928.814161,
+          "profit": 59821.954026,
+          "profit_per_contact": 0.623171
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.039677,
+          "incremental_outcomes": 4284.93545,
+          "profit": 63924.98626,
+          "profit_per_contact": 0.59192
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.037451,
+          "incremental_outcomes": 4493.970024,
+          "profit": 64351.250588,
+          "profit_per_contact": 0.536283
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.035804,
+          "incremental_outcomes": 4725.935318,
+          "profit": 65350.382962,
+          "profit_per_contact": 0.495097
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.033333,
+          "incremental_outcomes": 4799.759342,
+          "profit": 62396.383539,
+          "profit_per_contact": 0.433326
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.032471,
+          "incremental_outcomes": 5065.231539,
+          "profit": 64233.188479,
+          "profit_per_contact": 0.411767
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.030838,
+          "incremental_outcomes": 5180.547144,
+          "profit": 62316.078596,
+          "profit_per_contact": 0.370942
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.029453,
+          "incremental_outcomes": 5301.41197,
+          "profit": 60538.099249,
+          "profit_per_contact": 0.336336
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.028112,
+          "incremental_outcomes": 5397.291642,
+          "profit": 58135.091039,
+          "profit_per_contact": 0.302798
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.02684,
+          "incremental_outcomes": 5475.157887,
+          "profit": 55282.147185,
+          "profit_per_contact": 0.271002
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.025418,
+          "incremental_outcomes": 5489.97764,
+          "profit": 50852.641011,
+          "profit_per_contact": 0.235438
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.024493,
+          "incremental_outcomes": 5584.291793,
+          "profit": 48410.894816,
+          "profit_per_contact": 0.212337
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.023509,
+          "incremental_outcomes": 5641.842983,
+          "profit": 45049.674576,
+          "profit_per_contact": 0.187714
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.022617,
+          "incremental_outcomes": 5699.301605,
+          "profit": 41686.540121,
+          "profit_per_contact": 0.165429
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.021808,
+          "incremental_outcomes": 5757.184868,
+          "profit": 38333.621691,
+          "profit_per_contact": 0.145209
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.020973,
+          "incremental_outcomes": 5788.401451,
+          "profit": 34314.43628,
+          "profit_per_contact": 0.124333
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.02035,
+          "incremental_outcomes": 5860.528174,
+          "profit": 31317.604341,
+          "profit_per_contact": 0.108746
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.019612,
+          "incremental_outcomes": 5883.250841,
+          "profit": 27086.071036,
+          "profit_per_contact": 0.090291
+        }
+      ],
+      "random": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.009311,
+          "incremental_outcomes": 111.728393,
+          "profit": -2006.790172,
+          "profit_per_contact": -0.167233
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.007261,
+          "incremental_outcomes": 174.250048,
+          "profit": -5243.348811,
+          "profit_per_contact": -0.218482
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.010506,
+          "incremental_outcomes": 378.209982,
+          "profit": -4944.350447,
+          "profit_per_contact": -0.137347
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.00942,
+          "incremental_outcomes": 452.11855,
+          "profit": -7896.236257,
+          "profit_per_contact": -0.164512
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.009773,
+          "incremental_outcomes": 586.333218,
+          "profit": -9340.869551,
+          "profit_per_contact": -0.155686
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.009573,
+          "incremental_outcomes": 689.263167,
+          "profit": -11567.220836,
+          "profit_per_contact": -0.160663
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.009603,
+          "incremental_outcomes": 806.581826,
+          "profit": -13434.254346,
+          "profit_per_contact": -0.159937
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.009408,
+          "incremental_outcomes": 903.173106,
+          "profit": -15819.072354,
+          "profit_per_contact": -0.164789
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.009123,
+          "incremental_outcomes": 985.223932,
+          "profit": -18567.80171,
+          "profit_per_contact": -0.17193
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.009236,
+          "incremental_outcomes": 1108.248136,
+          "profit": -20291.796606,
+          "profit_per_contact": -0.169105
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.009331,
+          "incremental_outcomes": 1231.611758,
+          "profit": -22007.70605,
+          "profit_per_contact": -0.166731
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.009835,
+          "incremental_outcomes": 1416.234138,
+          "profit": -22191.746544,
+          "profit_per_contact": -0.154116
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.010459,
+          "incremental_outcomes": 1631.51228,
+          "profit": -21609.792999,
+          "profit_per_contact": -0.13853
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.010995,
+          "incremental_outcomes": 1847.03982,
+          "profit": -21021.604505,
+          "profit_per_contact": -0.125133
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.010343,
+          "incremental_outcomes": 1861.654879,
+          "profit": -25455.828027,
+          "profit_per_contact": -0.141427
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.010407,
+          "incremental_outcomes": 1998.153547,
+          "profit": -26843.361317,
+          "profit_per_contact": -0.139814
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.010824,
+          "incremental_outcomes": 2207.919218,
+          "profit": -26398.819542,
+          "profit_per_contact": -0.129411
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.010907,
+          "incremental_outcomes": 2355.801242,
+          "profit": -27501.768946,
+          "profit_per_contact": -0.127328
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.011243,
+          "incremental_outcomes": 2563.31825,
+          "profit": -27113.443746,
+          "profit_per_contact": -0.118923
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.011249,
+          "incremental_outcomes": 2699.630485,
+          "profit": -28505.637868,
+          "profit_per_contact": -0.118778
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.011399,
+          "incremental_outcomes": 2872.405801,
+          "profit": -28985.854969,
+          "profit_per_contact": -0.115028
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.010914,
+          "incremental_outcomes": 2881.222638,
+          "profit": -33565.434047,
+          "profit_per_contact": -0.127147
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.010824,
+          "incremental_outcomes": 2987.26507,
+          "profit": -35713.973242,
+          "profit_per_contact": -0.129404
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.010684,
+          "incremental_outcomes": 3076.974708,
+          "profit": -38271.232292,
+          "profit_per_contact": -0.132891
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.01102,
+          "incremental_outcomes": 3305.747006,
+          "profit": -37351.524845,
+          "profit_per_contact": -0.12451
+        }
+      ]
+    },
+    "peaks": {
+      "X-learner": {
+        "budget": 0.08,
+        "n_selected": 47998.0,
+        "uplift_in_group": 0.07195387056329994,
+        "incremental_outcomes": 3453.6418792972704,
+        "profit": 67141.84698243176,
+        "profit_per_contact": 1.3988467640824984
+      },
+      "propensity": {
+        "budget": 0.22,
+        "n_selected": 131995.0,
+        "uplift_in_group": 0.03580389649977628,
+        "incremental_outcomes": 4725.93531848797,
+        "profit": 65350.38296219925,
+        "profit_per_contact": 0.495097412494407
+      },
+      "random": {
+        "budget": 0.02,
+        "n_selected": 12000.0,
+        "uplift_in_group": 0.009310699425476777,
+        "incremental_outcomes": 111.72839310572132,
+        "profit": -2006.790172356967,
+        "profit_per_contact": -0.1672325143630806
+      }
+    },
+    "marginal_rule": {
+      "threshold": 0.016,
+      "n_selected": 60670,
+      "share_selected": 0.10112054295414658,
+      "expected_profit_model": 64842.21875
+    },
+    "marginal_rule_observed": {
+      "n_selected": 60670,
+      "uplift_in_group": 0.059954349828965636,
+      "incremental_outcomes": 3637.430404123345,
+      "profit": 66667.76010308362
+    }
+  },
+  "conversion": {
+    "economics": {
+      "margin": 4000.0,
+      "cost": 0.4
+    },
+    "treat_all": {
+      "n_selected": 599977,
+      "uplift_in_group": 0.0012784653409120925,
+      "incremental_outcomes": 767.0497998444146,
+      "profit": 2828208.3993776585
+    },
+    "curves": {
+      "X-learner": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.023547,
+          "incremental_outcomes": 282.563001,
+          "profit": 1125452.005152,
+          "profit_per_contact": 93.787667
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.013928,
+          "incremental_outcomes": 334.24642,
+          "profit": 1327386.079644,
+          "profit_per_contact": 55.310058
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.01172,
+          "incremental_outcomes": 421.906381,
+          "profit": 1673225.924044,
+          "profit_per_contact": 46.479789
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.010014,
+          "incremental_outcomes": 480.674963,
+          "profit": 1903500.653061,
+          "profit_per_contact": 39.657916
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.008985,
+          "incremental_outcomes": 539.053265,
+          "profit": 2132213.860986,
+          "profit_per_contact": 35.538082
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.007797,
+          "incremental_outcomes": 561.335652,
+          "profit": 2216543.807094,
+          "profit_per_contact": 30.786613
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.0069,
+          "incremental_outcomes": 579.553061,
+          "profit": 2284613.445799,
+          "profit_per_contact": 27.198751
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.006029,
+          "incremental_outcomes": 578.764665,
+          "profit": 2276660.260358,
+          "profit_per_contact": 23.716199
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.005219,
+          "incremental_outcomes": 563.621787,
+          "profit": 2211288.74651,
+          "profit_per_contact": 20.475654
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.004892,
+          "incremental_outcomes": 587.067813,
+          "profit": 2300273.251393,
+          "profit_per_contact": 19.169743
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.004596,
+          "incremental_outcomes": 606.583233,
+          "profit": 2373534.930282,
+          "profit_per_contact": 17.982006
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.004218,
+          "incremental_outcomes": 607.324749,
+          "profit": 2371701.395616,
+          "profit_per_contact": 16.470835
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.003921,
+          "incremental_outcomes": 611.580097,
+          "profit": 2383922.786778,
+          "profit_per_contact": 15.282144
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.003717,
+          "incremental_outcomes": 624.443534,
+          "profit": 2430576.537442,
+          "profit_per_contact": 14.468234
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.003526,
+          "incremental_outcomes": 634.730322,
+          "profit": 2466924.088894,
+          "profit_per_contact": 13.705667
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.003342,
+          "incremental_outcomes": 641.591719,
+          "profit": 2489569.674356,
+          "profit_per_contact": 12.966981
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.003188,
+          "incremental_outcomes": 650.278798,
+          "profit": 2519518.392185,
+          "profit_per_contact": 12.351065
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.003027,
+          "incremental_outcomes": 653.823486,
+          "profit": 2528897.142304,
+          "profit_per_contact": 11.708291
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.002901,
+          "incremental_outcomes": 661.469301,
+          "profit": 2554680.805963,
+          "profit_per_contact": 11.205183
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.002765,
+          "incremental_outcomes": 663.478931,
+          "profit": 2557919.322585,
+          "profit_per_contact": 10.658397
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.002641,
+          "incremental_outcomes": 665.472708,
+          "profit": 2561094.830523,
+          "profit_per_contact": 10.163478
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.002515,
+          "incremental_outcomes": 663.984833,
+          "profit": 2550343.33175,
+          "profit_per_contact": 9.660757
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.002417,
+          "incremental_outcomes": 667.198903,
+          "profit": 2558400.013305,
+          "profit_per_contact": 9.269935
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.002346,
+          "incremental_outcomes": 675.550766,
+          "profit": 2587007.464921,
+          "profit_per_contact": 8.983008
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.002265,
+          "incremental_outcomes": 679.429857,
+          "profit": 2597724.226056,
+          "profit_per_contact": 8.659427
+        }
+      ],
+      "propensity": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.027295,
+          "incremental_outcomes": 327.539727,
+          "profit": 1305358.907013,
+          "profit_per_contact": 108.779909
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.01605,
+          "incremental_outcomes": 385.174589,
+          "profit": 1531098.756054,
+          "profit_per_contact": 63.79844
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.012467,
+          "incremental_outcomes": 448.787079,
+          "profit": 1780748.717249,
+          "profit_per_contact": 49.466616
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.010814,
+          "incremental_outcomes": 519.064035,
+          "profit": 2057056.941139,
+          "profit_per_contact": 42.857139
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.009618,
+          "incremental_outcomes": 577.076011,
+          "profit": 2284304.843031,
+          "profit_per_contact": 38.073016
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.00879,
+          "incremental_outcomes": 632.832629,
+          "profit": 2502531.714586,
+          "profit_per_contact": 34.758833
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.007639,
+          "incremental_outcomes": 641.648753,
+          "profit": 2532996.213638,
+          "profit_per_contact": 30.155794
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.006939,
+          "incremental_outcomes": 666.104576,
+          "profit": 2626019.90223,
+          "profit_per_contact": 27.355514
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.006267,
+          "incremental_outcomes": 676.790622,
+          "profit": 2663964.088235,
+          "profit_per_contact": 24.667248
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.005708,
+          "incremental_outcomes": 684.919828,
+          "profit": 2691681.312122,
+          "profit_per_contact": 22.431612
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.005294,
+          "incremental_outcomes": 698.735931,
+          "profit": 2742145.722242,
+          "profit_per_contact": 20.774618
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.004886,
+          "incremental_outcomes": 703.51108,
+          "profit": 2756446.72136,
+          "profit_per_contact": 19.142789
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.004493,
+          "incremental_outcomes": 700.866739,
+          "profit": 2741069.355334,
+          "profit_per_contact": 17.571633
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.00428,
+          "incremental_outcomes": 719.047347,
+          "profit": 2808991.789039,
+          "profit_per_contact": 16.720786
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.003987,
+          "incremental_outcomes": 717.660645,
+          "profit": 2798645.380381,
+          "profit_per_contact": 15.548635
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.003756,
+          "incremental_outcomes": 721.216529,
+          "profit": 2808068.917672,
+          "profit_per_contact": 14.625892
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.00361,
+          "incremental_outcomes": 736.332427,
+          "profit": 2863732.908216,
+          "profit_per_contact": 14.038457
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.003423,
+          "incremental_outcomes": 739.420571,
+          "profit": 2871285.485014,
+          "profit_per_contact": 13.293481
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.00326,
+          "incremental_outcomes": 743.354996,
+          "profit": 2882223.58436,
+          "profit_per_contact": 12.641831
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.003042,
+          "incremental_outcomes": 729.941297,
+          "profit": 2823768.788951,
+          "profit_per_contact": 11.766145
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.00292,
+          "incremental_outcomes": 735.888376,
+          "profit": 2842757.502206,
+          "profit_per_contact": 11.281231
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.002801,
+          "incremental_outcomes": 739.422144,
+          "profit": 2852092.577681,
+          "profit_per_contact": 10.80379
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.002664,
+          "incremental_outcomes": 735.214614,
+          "profit": 2830462.856104,
+          "profit_per_contact": 10.255709
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.002553,
+          "incremental_outcomes": 735.337905,
+          "profit": 2826156.019539,
+          "profit_per_contact": 9.813417
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.002459,
+          "incremental_outcomes": 737.766504,
+          "profit": 2831070.816724,
+          "profit_per_contact": 9.43728
+        }
+      ],
+      "random": [
+        {
+          "budget": 0.02,
+          "n_selected": 12000,
+          "uplift_in_group": 0.000926,
+          "incremental_outcomes": 11.114106,
+          "profit": 39656.423689,
+          "profit_per_contact": 3.304702
+        },
+        {
+          "budget": 0.04,
+          "n_selected": 23999,
+          "uplift_in_group": 0.00079,
+          "incremental_outcomes": 18.970921,
+          "profit": 66284.082772,
+          "profit_per_contact": 2.761952
+        },
+        {
+          "budget": 0.06,
+          "n_selected": 35999,
+          "uplift_in_group": 0.001029,
+          "incremental_outcomes": 37.03901,
+          "profit": 133756.438618,
+          "profit_per_contact": 3.71556
+        },
+        {
+          "budget": 0.08,
+          "n_selected": 47998,
+          "uplift_in_group": 0.001134,
+          "incremental_outcomes": 54.440343,
+          "profit": 198562.17144,
+          "profit_per_contact": 4.136884
+        },
+        {
+          "budget": 0.1,
+          "n_selected": 59998,
+          "uplift_in_group": 0.001041,
+          "incremental_outcomes": 62.458483,
+          "profit": 225834.733366,
+          "profit_per_contact": 3.764038
+        },
+        {
+          "budget": 0.12,
+          "n_selected": 71997,
+          "uplift_in_group": 0.001062,
+          "incremental_outcomes": 76.460314,
+          "profit": 277042.456476,
+          "profit_per_contact": 3.847972
+        },
+        {
+          "budget": 0.14,
+          "n_selected": 83997,
+          "uplift_in_group": 0.001223,
+          "incremental_outcomes": 102.760294,
+          "profit": 377442.377881,
+          "profit_per_contact": 4.493522
+        },
+        {
+          "budget": 0.16,
+          "n_selected": 95996,
+          "uplift_in_group": 0.001251,
+          "incremental_outcomes": 120.118016,
+          "profit": 442073.662492,
+          "profit_per_contact": 4.605126
+        },
+        {
+          "budget": 0.18,
+          "n_selected": 107996,
+          "uplift_in_group": 0.001275,
+          "incremental_outcomes": 137.71695,
+          "profit": 507669.399427,
+          "profit_per_contact": 4.700817
+        },
+        {
+          "budget": 0.2,
+          "n_selected": 119995,
+          "uplift_in_group": 0.001271,
+          "incremental_outcomes": 152.571935,
+          "profit": 562289.739567,
+          "profit_per_contact": 4.685943
+        },
+        {
+          "budget": 0.22,
+          "n_selected": 131995,
+          "uplift_in_group": 0.001423,
+          "incremental_outcomes": 187.763164,
+          "profit": 698254.655725,
+          "profit_per_contact": 5.290008
+        },
+        {
+          "budget": 0.24,
+          "n_selected": 143994,
+          "uplift_in_group": 0.00136,
+          "incremental_outcomes": 195.795091,
+          "profit": 725582.764879,
+          "profit_per_contact": 5.038979
+        },
+        {
+          "budget": 0.26,
+          "n_selected": 155994,
+          "uplift_in_group": 0.001309,
+          "incremental_outcomes": 204.23898,
+          "profit": 754558.320604,
+          "profit_per_contact": 4.837098
+        },
+        {
+          "budget": 0.28,
+          "n_selected": 167994,
+          "uplift_in_group": 0.001395,
+          "incremental_outcomes": 234.323269,
+          "profit": 870095.476384,
+          "profit_per_contact": 5.179325
+        },
+        {
+          "budget": 0.3,
+          "n_selected": 179993,
+          "uplift_in_group": 0.001321,
+          "incremental_outcomes": 237.818384,
+          "profit": 879276.335838,
+          "profit_per_contact": 4.885059
+        },
+        {
+          "budget": 0.32,
+          "n_selected": 191993,
+          "uplift_in_group": 0.001161,
+          "incremental_outcomes": 222.842726,
+          "profit": 814573.704293,
+          "profit_per_contact": 4.242726
+        },
+        {
+          "budget": 0.34,
+          "n_selected": 203992,
+          "uplift_in_group": 0.001193,
+          "incremental_outcomes": 243.45081,
+          "profit": 892206.441331,
+          "profit_per_contact": 4.373733
+        },
+        {
+          "budget": 0.36,
+          "n_selected": 215992,
+          "uplift_in_group": 0.001281,
+          "incremental_outcomes": 276.708757,
+          "profit": 1020438.229637,
+          "profit_per_contact": 4.724426
+        },
+        {
+          "budget": 0.38,
+          "n_selected": 227991,
+          "uplift_in_group": 0.001266,
+          "incremental_outcomes": 288.688346,
+          "profit": 1063556.983568,
+          "profit_per_contact": 4.664908
+        },
+        {
+          "budget": 0.4,
+          "n_selected": 239991,
+          "uplift_in_group": 0.001283,
+          "incremental_outcomes": 307.851192,
+          "profit": 1135408.367085,
+          "profit_per_contact": 4.731046
+        },
+        {
+          "budget": 0.42,
+          "n_selected": 251990,
+          "uplift_in_group": 0.001338,
+          "incremental_outcomes": 337.216151,
+          "profit": 1248068.604178,
+          "profit_per_contact": 4.95285
+        },
+        {
+          "budget": 0.44,
+          "n_selected": 263990,
+          "uplift_in_group": 0.001281,
+          "incremental_outcomes": 338.060844,
+          "profit": 1246647.377274,
+          "profit_per_contact": 4.722328
+        },
+        {
+          "budget": 0.46,
+          "n_selected": 275989,
+          "uplift_in_group": 0.001322,
+          "incremental_outcomes": 364.865637,
+          "profit": 1349066.94999,
+          "profit_per_contact": 4.888119
+        },
+        {
+          "budget": 0.48,
+          "n_selected": 287989,
+          "uplift_in_group": 0.001289,
+          "incremental_outcomes": 371.123533,
+          "profit": 1369298.531191,
+          "profit_per_contact": 4.75469
+        },
+        {
+          "budget": 0.5,
+          "n_selected": 299988,
+          "uplift_in_group": 0.001254,
+          "incremental_outcomes": 376.168121,
+          "profit": 1384677.284168,
+          "profit_per_contact": 4.615776
+        }
+      ]
+    },
+    "peaks": {
+      "X-learner": {
+        "budget": 0.5,
+        "n_selected": 299988.0,
+        "uplift_in_group": 0.0022648567826513517,
+        "incremental_outcomes": 679.4298565140137,
+        "profit": 2597724.2260560547,
+        "profit_per_contact": 8.659427130605406
+      },
+      "propensity": {
+        "budget": 0.38,
+        "n_selected": 227991.0,
+        "uplift_in_group": 0.003260457632493814,
+        "incremental_outcomes": 743.3549960898971,
+        "profit": 2882223.5843595886,
+        "profit_per_contact": 12.641830529975255
+      },
+      "random": {
+        "budget": 0.5,
+        "n_selected": 299988.0,
+        "uplift_in_group": 0.0012539438945628372,
+        "incremental_outcomes": 376.1681210421164,
+        "profit": 1384677.2841684658,
+        "profit_per_contact": 4.615775578251349
+      }
+    },
+    "marginal_rule": {
+      "threshold": 0.0001,
+      "n_selected": 598940,
+      "share_selected": 0.9982716004113491,
+      "expected_profit_model": 2404267.25
+    },
+    "marginal_rule_observed": {
+      "n_selected": 598940,
+      "uplift_in_group": 0.0011871100274577736,
+      "incremental_outcomes": 711.0076798455589,
+      "profit": 2604454.7193822353
+    }
+  },
+  "visit_profit_delta_at_peak": {
+    "point": 25378.563787080566,
+    "lo": 13159.322015126554,
+    "hi": 37136.40862466322,
+    "separable": true,
+    "budget": 0.08,
+    "per_100k_users": {
+      "point": 4229.922778219926,
+      "lo": 2193.3044125235724,
+      "hi": 6189.638706927635
+    }
+  }
+}

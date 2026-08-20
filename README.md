@@ -20,7 +20,7 @@ incremental profit.
 | 3–4 | T/X-learners from scratch, verified (r=1.000 vs sklift + synthetic ground-truth suite); Qini-based CV tuning; seed stability 0.987 | ✅ |
 | 5 | Evaluation suite ✅ — ladder w/ 200-boot CIs (all models beat random; T≈X≈propensity within CIs on Hillstrom), calibration corr 0.66 (top decile: pred 14.2pp vs obs 15.2pp), quadrant analysis | ✅ |
 | 6–7 | Criteo ✅ — GATE (pre-registered): conversion stays PRIMARY (deltas separable — propensity wins conversion qini); visit secondary: X-learner +1.23pp over propensity at top decile (paired CI [+0.57,+2.03], separable); calibration corr 0.994 | ✅ |
-| 8 | Policy layer: incremental-profit curves | ⬜ |
+| 8 | Policy layer ✅ — visit economics: treat-all LOSES ₹86K, X-learner makes ₹67K at 8% budget (propensity needs 22% budget for the same money); X beats propensity ₹25.4K CI[13.2K,37.1K] at 8%; conversion economics: treat-all near-optimal — targeting adds nothing | ✅ |
 | 9 | **Golden-holdout evaluation — headline numbers** | ⬜ |
 | 10–11 | Streamlit decision cockpit (HF Spaces) | ⬜ |
 | 12–14 | README, write-up, stretch, mocks | ⬜ |
