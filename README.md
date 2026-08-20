@@ -30,7 +30,7 @@ incremental profit.
 | 5 | Evaluation suite ✅ — ladder w/ 200-boot CIs (all models beat random; T≈X≈propensity within CIs on Hillstrom), calibration corr 0.66 (top decile: pred 14.2pp vs obs 15.2pp), quadrant analysis | ✅ |
 | 6–7 | Criteo ✅ — GATE (pre-registered): conversion stays PRIMARY (deltas separable — propensity wins conversion qini); visit secondary: X-learner +1.23pp over propensity at top decile (paired CI [+0.57,+2.03], separable); calibration corr 0.994 | ✅ |
 | 8 | Policy layer ✅ — visit economics: treat-all LOSES ₹86K, X-learner makes ₹67K at 8% budget (propensity needs 22% budget for the same money); X beats propensity ₹25.4K CI[13.2K,37.1K] at 8%; conversion economics: treat-all near-optimal — targeting adds nothing | ✅ |
-| 9 | **Golden-holdout evaluation — headline numbers** | ⬜ |
+| 9 | **Golden-holdout evaluation ✅ FROZEN** — X−prop uplift@10% +1.17pp [+0.89,+1.48] separable (visit, 4.19M sealed rows); conv qini still favors propensity (separable, as gated); calibration r=0.996; frozen 8% policy: X ₹480K vs prop ₹327K vs treat-all −₹577K | ✅ |
 | 10–11 | Decision cockpit ✅ LIVE — [gtushar-05-incremental-cockpit.static.hf.space](https://gtushar-05-incremental-cockpit.static.hf.space) (static, zero cold-start) + Streamlit app for local walkthroughs | ✅ |
 | 12–14 | README, write-up, stretch, mocks | ⬜ |
 
