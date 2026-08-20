@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incremental — decision cockpit</title>
+<style>
+  :root{
+    --bg:#EBEFF0; --surface:#FFFFFF; --border:#D2DDDF; --ink:#152225;
+    --muted:#4E6165; --faint:#839598; --accent:#276678; --accent-soft:#DCEAEE;
+    --green:#1F6347; --rose:#B23A48; --amber:#8A6212; --gray:#999999;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0F1719; --surface:#162023; --border:#2B3D42; --ink:#E6EEF0;
+      --muted:#9DB2B7; --faint:#697C81; --accent:#6FBCD4; --accent-soft:#1B2F36;
+      --green:#6CC49F; --rose:#E8879C; --amber:#DFAE4E; --gray:#8a8a8a;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:15.5px}
+  .wrap{max-width:1060px;margin:0 auto;padding:34px 20px 80px}
+  h1{font-size:clamp(26px,4.5vw,36px);margin:0 0 6px;letter-spacing:-.015em;line-height:1.1}
+  .sub{color:var(--muted);max-width:70ch;font-size:14.5px}
+  .sub a{color:var(--accent)}
+  .banner{margin:16px 0;padding:10px 14px;border-left:3px solid var(--amber);background:var(--surface);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--muted)}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:18px 0}
+  .metric{background:var(--surface);padding:13px 15px}
+  .metric .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .metric .val{font-family:var(--mono);font-size:21px;font-weight:700;color:var(--accent);margin-top:3px}
+  .metric .det{font-size:11.5px;color:var(--muted);margin-top:2px}
+  h2{font-size:21px;margin:36px 0 8px;letter-spacing:-.01em}
+  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0}
+  .seg{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+  .seg button{font-family:var(--sans);font-size:12.5px;padding:7px 13px;border:none;background:var(--surface);color:var(--muted);cursor:pointer}
+  .seg button.on{background:var(--accent);color:#fff;font-weight:600}
+  .sliderbox{flex:1;min-width:260px;background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:9px 14px}
+  .sliderbox label{font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between}
+  .sliderbox output{font-family:var(--mono);font-weight:700;color:var(--accent)}
+  input[type=range]{width:100%;accent-color:var(--accent)}
+  .readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+  .ro{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 13px}
+  .ro .n{font-size:11px;color:var(--faint);font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+  .ro .v{font-family:var(--mono);font-size:19px;font-weight:700;margin-top:2px}
+  .ro .d{font-size:11px;color:var(--muted)}
+  .pos{color:var(--green)} .neg{color:var(--rose)}
+  canvas{width:100%;height:300px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+  .note{font-size:12.5px;color:var(--faint);margin-top:8px;max-width:78ch}
+  .imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin:14px 0}
+  .imgs figure{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px}
+  .imgs img{width:100%;border-radius:6px}
+  .imgs figcaption{font-size:12px;color:var(--muted);padding:6px 4px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  th{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);text-align:left;padding:8px 11px;border-bottom:1px solid var(--border)}
+  td{padding:8px 11px;border-bottom:1px solid var(--border)}
+  tr:last-child td{border-bottom:none}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:760px){.cols{grid-template-columns:1fr}}
+  .prose{font-size:14px;max-width:76ch}
+  .prose li{margin:6px 0}
+  code{font-family:var(--mono);font-size:.85em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+  footer{margin-top:40px;color:var(--faint);font-size:12px;border-top:1px solid var(--border);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Incremental — a causal targeting engine</h1>
+  <p class="sub">Who should we actually contact — not who will convert. Uplift models trained from scratch on 13.9M-user randomized-experiment data, turned into budget-constrained profit decisions. Everything on this page is a <b>precomputed, RCT-validated artifact</b> — no model runs here. Source: <a href="https://github.com/gtushar05/incremental">github.com/gtushar05/incremental</a></p>
+
+  <div id="banner" class="banner" hidden></div>
+  <div id="hero" class="metrics" hidden></div>
+
+  <h2>Slide the budget — watch the money move</h2>
+  <div class="controls">
+    <div class="seg" id="scenario">
+      <button data-s="visit" class="on">Visits · ₹25 margin</button>
+      <button data-s="conversion">Conversions · ₹4,000 margin</button>
+    </div>
+    <div class="sliderbox">
+      <label>Contact budget <output id="bout">8%</output></label>
+      <input type="range" id="budget" min="0" max="24" value="3" step="1" aria-label="contact budget">
+    </div>
+  </div>
+  <div class="readouts" id="readouts"></div>
+  <canvas id="chart" height="300"></canvas>
+  <p class="note">Profit is <b>observed, not predicted</b>: models only choose whom to contact; money is scored by treated-vs-control outcome differences inside the chosen group — unbiased because assignment was randomized (600K-user validation slice, Criteo-UPLIFT v2).</p>
+
+  <h2>Evidence</h2>
+  <div class="imgs">
+    <figure><img src="reports/qini_curves.png" alt="Qini curves"><figcaption>Qini curves — which ranking finds the persuadables first</figcaption></figure>
+    <figure><img src="reports/calibration.png" alt="Calibration"><figcaption>Predicted vs RCT-observed uplift by decile</figcaption></figure>
+    <figure><img src="reports/profit_curves.png" alt="Profit curves"><figcaption>The money chart — both economics scenarios</figcaption></figure>
+    <figure><img src="reports/misallocation.png" alt="Misallocation"><figcaption>Where a response model spends budget vs where the lift lives</figcaption></figure>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Segments (validated)</h2>
+      <table id="quads"><thead><tr><th>segment</th><th>share</th><th>predicted τ</th><th>observed lift</th></tr></thead><tbody></tbody></table>
+      <p class="note">Each segment's lift comes from arm differences <em>inside</em> the segment — labels are validated, not asserted.</p>
+    </div>
+    <div>
+      <h2>Method, in four locks</h2>
+      <ul class="prose">
+        <li><b>Sealed holdouts:</b> golden holdouts hashed &amp; committed on day 1 (<code>4b1e135a…</code>, <code>eabff873…</code>) — evaluated exactly once.</li>
+        <li><b>Pre-registered rules:</b> primary-label gate + sampling protocol committed before results existed; the gate kept the label where our own models <em>lose</em>.</li>
+        <li><b>Paired-delta inference:</b> model comparisons use paired bootstrap deltas — overlapping CIs can't adjudicate. The machinery caught a real tie-ordering bug via an impossible CI.</li>
+        <li><b>From-scratch, verified:</b> T/X-learners bit-identical to sklift (r = 1.000000) + a synthetic ground-truth test suite; 23 tests.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>The four findings</h2>
+  <ol class="prose">
+    <li><b>The industry default burns money, measurably</b> — response-model targeting forfeits 14–17% of capturable lift at 30–50% budgets.</li>
+    <li><b>Small data is fog</b> — on 64K rows, uplift vs propensity is statistically undecidable (and we say so, with CIs).</li>
+    <li><b>At scale, uplift wins where theory predicts</b> — the X-learner's top decile concentrates ~6× the average lift, beating propensity by a CI-separable margin; at thin margins, targeting flips the campaign from loss to profit at an 8% budget.</li>
+    <li><b>And loses where theory predicts</b> — at a 0.29% base rate, effect-differencing is noise-dominated and propensity wins; with fat margins, treat-all is near-optimal anyway. <b>Knowing the regime is the skill.</b></li>
+  </ol>
+
+  <footer>Built solo in a 14-day sprint · datasets: Hillstrom (64K, MineThatData) &amp; Criteo-UPLIFT v2 (13.9M) · every number reproducible from the repo's day scripts · design decisions and defenses in the repo README.</footer>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const fmtINR = v => (v<0?"−₹":"₹") + Math.abs(Math.round(v)).toLocaleString("en-IN");
+let DAY8=null, DAY9=null, DAY5=null, scenario="visit";
+
+async function grab(p){ try{ const r=await fetch(p); return r.ok? await r.json():null }catch(e){ return null } }
+
+function heroRender(){
+  const hero=$("hero"), banner=$("banner");
+  if(!DAY9){ banner.hidden=false; banner.textContent="Golden-holdout numbers not yet frozen — showing validation-split results (days 2–8)."; return }
+  const lad=DAY9.criteo_visit_ladder, x=lad.find(r=>r.ranking==="X-learner");
+  const d=DAY9.criteo_headline_deltas.visit_u10_X_minus_prop;
+  const pol=DAY9.criteo_policy_at_8pct;
+  hero.hidden=false;
+  hero.innerHTML = [
+    ["Lift concentrated in top 10% (X-learner)", (x.u10_point*100).toFixed(2)+"pp", "sealed 4.19M-row holdout · population avg ≈ 1pp"],
+    ["vs propensity (paired 95% CI)", "+"+(d.point*100).toFixed(2)+"pp", `CI [${(d.lo*100).toFixed(2)}, ${(d.hi*100).toFixed(2)}]pp · separable: ${d.separable}`],
+    ["Frozen 8%-budget policy (holdout)", fmtINR(pol.X_profit), "treat-all: "+fmtINR(pol.treat_all_profit)],
+    ["Calibration, predicted vs observed", "r = "+DAY9.criteo_visit_calibration_corr.toFixed(3), "across X-score deciles, holdout"],
+  ].map(([l,v,det])=>`<div class="metric"><div class="lbl">${l}</div><div class="val">${v}</div><div class="det">${det}</div></div>`).join("");
+  banner.hidden=false;
+  banner.textContent="Headline numbers from the single pre-registered golden-holdout evaluation — sealed data, hashed in the git log, evaluated exactly once.";
+}
+
+function curves(){ return DAY8[scenario].curves }
+function budgets(){ return curves()["X-learner"].map(r=>r.budget) }
+
+function readouts(){
+  const i=+$("budget").value, rows=curves(), ta=DAY8[scenario].treat_all.profit;
+  const b=budgets()[i]; $("bout").textContent=Math.round(b*100)+"%";
+  const x=rows["X-learner"][i], p=rows["propensity"][i], r=rows["random"][i];
+  $("readouts").innerHTML = [
+    ["X-learner", x.profit, x.n_selected.toLocaleString()+" contacts"],
+    ["Propensity", p.profit, "X − propensity: "+fmtINR(x.profit-p.profit)],
+    ["Random", r.profit, ""],
+    ["Treat everyone", ta, "no targeting"],
+  ].map(([n,v,d])=>`<div class="ro"><div class="n">${n}</div><div class="v ${v>=0?"pos":"neg"}">${fmtINR(v)}</div><div class="d">${d}</div></div>`).join("");
+}
+
+function draw(){
+  const cv=$("chart"), dpr=window.devicePixelRatio||1;
+  const W=cv.clientWidth, H=300; cv.width=W*dpr; cv.height=H*dpr;
+  const g=cv.getContext("2d"); g.scale(dpr,dpr); g.clearRect(0,0,W,H);
+  const cs=getComputedStyle(document.documentElement);
+  const col=n=>cs.getPropertyValue(n).trim();
+  const rows=curves(), bs=budgets(), ta=DAY8[scenario].treat_all.profit;
+  const all=[...rows["X-learner"],...rows["propensity"],...rows["random"]].map(r=>r.profit).concat([ta,0]);
+  const ymin=Math.min(...all)*1.08, ymax=Math.max(...all)*1.12;
+  const L=62,R=12,T=12,B=30;
+  const xp=b=>L+(b-bs[0])/(bs[bs.length-1]-bs[0])*(W-L-R);
+  const yp=v=>T+(ymax-v)/(ymax-ymin)*(H-T-B);
+  g.strokeStyle=col("--border"); g.lineWidth=1; g.font="10.5px "+col("--mono"); g.fillStyle=col("--faint");
+  for(let k=0;k<=4;k++){ const v=ymin+(ymax-ymin)*k/4, y=yp(v);
+    g.beginPath(); g.moveTo(L,y); g.lineTo(W-R,y); g.stroke();
+    g.fillText((v<0?"−₹":"₹")+Math.abs(Math.round(v/1000))+"K",6,y+3); }
+  [0.1,0.2,0.3,0.4,0.5].forEach(b=>{ if(b<=bs[bs.length-1]) g.fillText(Math.round(b*100)+"%",xp(b)-8,H-12) });
+  g.strokeStyle=col("--ink"); g.globalAlpha=.5; g.beginPath(); g.moveTo(L,yp(0)); g.lineTo(W-R,yp(0)); g.stroke(); g.globalAlpha=1;
+  g.setLineDash([4,4]); g.strokeStyle=col("--amber"); g.beginPath(); g.moveTo(L,yp(ta)); g.lineTo(W-R,yp(ta)); g.stroke(); g.setLineDash([]);
+  const series=[["X-learner","--green",2.4],["propensity","--rose",1.7],["random","--gray",1.3]];
+  for(const [name,c,w] of series){ g.strokeStyle=col(c); g.lineWidth=w; g.beginPath();
+    rows[name].forEach((r,i)=>{ const x=xp(r.budget),y=yp(r.profit); i?g.lineTo(x,y):g.moveTo(x,y) }); g.stroke(); }
+  const bi=+$("budget").value, bx=xp(bs[bi]);
+  g.strokeStyle=col("--accent"); g.lineWidth=1.4; g.globalAlpha=.8;
+  g.beginPath(); g.moveTo(bx,T); g.lineTo(bx,H-B); g.stroke(); g.globalAlpha=1;
+  let lx=L+10; g.font="11.5px "+col("--sans");
+  for(const [name,c] of [["X-learner","--green"],["propensity","--rose"],["random","--gray"],["treat everyone","--amber"]]){
+    g.fillStyle=col(c); g.fillRect(lx,T+4,14,3); g.fillStyle=col("--muted"); g.fillText(name,lx+18,T+9); lx+=g.measureText(name).width+44; }
+}
+
+function quadsRender(){
+  if(!DAY5) return;
+  $("quads").querySelector("tbody").innerHTML = DAY5.quadrants.map(q=>
+    `<tr><td>${q.segment}</td><td>${(q.share*100).toFixed(1)}%</td><td>${(q.mean_predicted_tau*100).toFixed(2)}pp</td><td>${(q.observed_lift*100).toFixed(2)}pp</td></tr>`).join("");
+}
+
+async function main(){
+  [DAY8, DAY9, DAY5] = await Promise.all([
+    grab("reports/day8_policy.json"), grab("reports/day9_holdout_FROZEN.json"),
+    grab("reports/day5_evaluation.json")]);
+  if(!DAY8){ $("banner").hidden=false; $("banner").textContent="Could not load report artifacts — serve this page over HTTP (python3 -m http.server) rather than file://."; return }
+  $("budget").max = budgets().length-1;
+  heroRender(); quadsRender(); readouts(); draw();
+  $("budget").addEventListener("input", ()=>{ readouts(); draw() });
+  $("scenario").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+    scenario=b.dataset.s;
+    $("scenario").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));
+    readouts(); draw();
+  }));
+  window.addEventListener("resize", draw);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+}
+main();
+</script>
+</body>
+</html>
