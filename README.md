@@ -31,7 +31,7 @@ incremental profit.
 | 6–7 | Criteo ✅ — GATE (pre-registered): conversion stays PRIMARY (deltas separable — propensity wins conversion qini); visit secondary: X-learner +1.23pp over propensity at top decile (paired CI [+0.57,+2.03], separable); calibration corr 0.994 | ✅ |
 | 8 | Policy layer ✅ — visit economics: treat-all LOSES ₹86K, X-learner makes ₹67K at 8% budget (propensity needs 22% budget for the same money); X beats propensity ₹25.4K CI[13.2K,37.1K] at 8%; conversion economics: treat-all near-optimal — targeting adds nothing | ✅ |
 | 9 | **Golden-holdout evaluation — headline numbers** | ⬜ |
-| 10–11 | Decision cockpit ✅ — static HTML (index.html, zero-dependency, HF Static Space) + Streamlit app for local demo; both read precomputed artifacts only | 🔶 |
+| 10–11 | Decision cockpit ✅ LIVE — [gtushar-05-incremental-cockpit.static.hf.space](https://gtushar-05-incremental-cockpit.static.hf.space) (static, zero cold-start) + Streamlit app for local walkthroughs | ✅ |
 | 12–14 | README, write-up, stretch, mocks | ⬜ |
 
 ## Data
