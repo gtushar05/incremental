@@ -20,7 +20,7 @@ git add .gitattributes README.md index.html app.py requirements.txt app/ reports
 git commit -qm "Space deploy: static cockpit + precomputed artifacts ($(date +%Y-%m-%d))"
 git push space $BRANCH:main --force
 
-git checkout main -q
+git checkout -f main -q
 git branch -D $BRANCH -q
 rm -f .gitattributes
 echo "deployed -> https://huggingface.co/spaces/Gtushar-05/incremental-cockpit"
