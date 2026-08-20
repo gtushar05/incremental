@@ -8,5 +8,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pandas numpy scipy pyarrow pytest
+          cache: pip
+      - run: pip install pandas numpy scipy pyarrow pytest xgboost scikit-learn
       - run: pytest -q
