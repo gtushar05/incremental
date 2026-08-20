@@ -1,3 +1,12 @@
+---
+title: Incremental — Decision Cockpit
+emoji: 🧲
+colorFrom: blue
+colorTo: green
+sdk: static
+pinned: false
+---
+
 # Incremental — a causal targeting engine
 
 **Who should we actually contact — not who will convert.**
