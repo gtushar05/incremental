@@ -132,7 +132,7 @@ build on 3.14, hence sklift + synthetic ground truth for verification.
 ## Repo map
 
 ```
-src/incremental/   validation · data · features · baseline · uplift · metrics · evaluation · policy
+src/incremental/   validation · data · features · baseline · uplift · metrics · evaluation · policy · brief
 scripts/           one runnable script per build day + deploy_space.sh
 tests/             23 tests — synthetic-RCT ground truth, library parity, regression tests
 reports/           every number in this README, as JSON + charts
@@ -146,8 +146,9 @@ Built solo in a 14-day sprint (~45h). Deliberately cut, in scope order for a
 full build: FastAPI/Docker serving with latency benchmarks, S/DR-learners
 from scratch (library versions appear in comparisons), formal off-policy
 estimators (IPS/SNIPS/DR — policy value is reported directly against RCT
-truth instead), the X5 RetailHero RFM module, and an LLM campaign-brief
-writer. Economics are stated illustrative scenarios; the profit *shapes* are
+truth instead), and the X5 RetailHero RFM module. (The LLM brief-writer,
+originally cut, shipped on Day 13 in micro form: validator-gated generation
+with an adversarial test suite — see src/incremental/brief.py.) Economics are stated illustrative scenarios; the profit *shapes* are
 scenario-robust, the rupee levels are not. With observational (non-RCT)
 data, every causal claim here would weaken to assumption-laden estimates —
 that boundary is discussed in [WRITEUP.md](WRITEUP.md).

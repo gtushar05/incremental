@@ -1,0 +1,16 @@
+{
+  "provider": "none",
+  "validated": true,
+  "validation": {
+    "ok": true,
+    "violations": [],
+    "anchors_failed": [],
+    "n_numbers_checked": 19
+  },
+  "fallback_used": true,
+  "fallback_reason": {
+    "provider_unavailable": true
+  },
+  "elapsed_s": 5.4,
+  "est_cost": "n/a"
+}
