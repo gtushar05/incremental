@@ -155,5 +155,6 @@ that boundary is discussed in [WRITEUP.md](WRITEUP.md).
 
 ## Build log
 
-14-day sprint, days 1–12 complete. The full day-by-day log with metrics
-lives in the commit history — each day is one commit with its findings.
+14-day sprint, complete. The full day-by-day log with metrics lives in
+the commit history — each day is one commit with its findings. Interview
+defense pack: [DEFENSE.md](DEFENSE.md).
