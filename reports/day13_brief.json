@@ -9,8 +9,15 @@
   },
   "fallback_used": true,
   "fallback_reason": {
-    "provider_unavailable": true
+    "provider_unavailable": true,
+    "diagnostics": {
+      "claude_cli": {
+        "returncode": 1,
+        "stdout_head": "Not logged in \u00b7 Please run /login",
+        "stderr_head": "Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer."
+      }
+    }
   },
-  "elapsed_s": 5.4,
+  "elapsed_s": 5.7,
   "est_cost": "n/a"
 }

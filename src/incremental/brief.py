@@ -124,8 +124,10 @@ targeting, the calibration correlation, and the confirmatory A/B design.
 FACTS = {json.dumps({k: round(v, 4) for k, v in sources.items()}, indent=1)}"""
 
 
-def generate_llm(sources: dict[str, float]) -> tuple[str | None, str]:
-    """Try providers in order; return (text|None, provider_name)."""
+def generate_llm(sources: dict[str, float]) -> tuple[str | None, str, dict]:
+    """Try providers in order; return (text|None, provider_name, diagnostics).
+    Diagnostics are recorded so a fallback is never an unexplained event."""
+    diag: dict = {}
     if os.environ.get("ANTHROPIC_API_KEY"):
         try:
             import anthropic  # type: ignore
@@ -133,18 +135,24 @@ def generate_llm(sources: dict[str, float]) -> tuple[str | None, str]:
             msg = client.messages.create(
                 model="claude-haiku-4-5-20251001", max_tokens=600,
                 messages=[{"role": "user", "content": _prompt(sources)}])
-            return msg.content[0].text, "anthropic-api/haiku-4.5"
-        except Exception:
-            pass
+            return msg.content[0].text, "anthropic-api/haiku-4.5", diag
+        except Exception as e:
+            diag["anthropic_api_error"] = repr(e)[:200]
     try:
         out = subprocess.run(
             ["claude", "-p", _prompt(sources)],
-            capture_output=True, text=True, timeout=180)
-        if out.returncode == 0 and out.stdout.strip():
-            return out.stdout.strip(), "claude-cli"
-    except Exception:
-        pass
-    return None, "none"
+            capture_output=True, text=True, timeout=180,
+            stdin=subprocess.DEVNULL)  # CLI waits 3s for piped stdin otherwise
+        text = out.stdout.strip()
+        looks_like_error = text.lower().startswith(("not logged in", "error"))
+        if out.returncode == 0 and text and not looks_like_error:
+            return text, "claude-cli", diag
+        diag["claude_cli"] = {"returncode": out.returncode,
+                              "stdout_head": text[:120],
+                              "stderr_head": out.stderr.strip()[:200]}
+    except Exception as e:
+        diag["claude_cli_exception"] = repr(e)[:200]
+    return None, "none", diag
 
 
 def render_template(sources: dict[str, float]) -> str:
@@ -175,7 +183,7 @@ uplift, {s['design_n_per_arm']:.0f} users per arm suffice (alpha=0.05, power=0.8
 def make_brief(day8: dict, day9: dict) -> dict:
     """Orchestrator: LLM draft -> validate -> release or kill-switch."""
     sources = source_numbers(day8, day9)
-    draft, provider = generate_llm(sources)
+    draft, provider, diag = generate_llm(sources)
     if draft is not None:
         v = validate_brief(draft, sources)
         if v.ok:
@@ -184,7 +192,7 @@ def make_brief(day8: dict, day9: dict) -> dict:
         fallback_reason = {"violations": v.violations,
                            "anchors_failed": v.anchors_failed}
     else:
-        fallback_reason = {"provider_unavailable": True}
+        fallback_reason = {"provider_unavailable": True, "diagnostics": diag}
     tmpl = render_template(sources)
     tv = validate_brief(tmpl, sources)
     assert tv.ok, f"template must always validate: {tv}"
