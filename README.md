@@ -111,7 +111,7 @@ RCT data ─▶ validation ─▶ uplift learners ─▶ evaluation ─▶ polic
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[model,dev]" duckdb streamlit
-pytest                                  # 23 tests: synthetic ground truth + regressions
+pytest                                  # 29 tests: synthetic ground truth + regressions
 python scripts/day1_validate.py         # randomization checks, seal the holdout
 python scripts/day2_baseline.py         # propensity baseline + misallocation exhibit
 python scripts/day3_uplift.py           # T/X-learners + sklift parity
@@ -134,7 +134,7 @@ build on 3.14, hence sklift + synthetic ground truth for verification.
 ```
 src/incremental/   validation · data · features · baseline · uplift · metrics · evaluation · policy · brief
 scripts/           one runnable script per build day + deploy_space.sh
-tests/             23 tests — synthetic-RCT ground truth, library parity, regression tests
+tests/             29 tests — synthetic-RCT ground truth, library parity, regression tests
 reports/           every number in this README, as JSON + charts
 app/ + index.html  decision cockpit (Streamlit for local; static HTML on HF Spaces)
 PREREGISTRATION.md sealed-holdout hashes + pre-committed decision rules
